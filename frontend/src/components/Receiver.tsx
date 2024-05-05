@@ -4,7 +4,7 @@ import { useEffect } from "react"
 export const Receiver = () => {
     
     useEffect(() => {
-        const socket = new WebSocket('ws://localhost:8000');
+        const socket = new WebSocket(import.meta.env.VITE_APP_WEBSOCKET_URL);
         socket.onopen = () => {
             socket.send(JSON.stringify({
                 type: 'receiver'
